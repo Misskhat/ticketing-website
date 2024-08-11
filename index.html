@@ -38,7 +38,6 @@
       </nav>
     </section>
     <!-- Navigation section end -->
-
     <!-- hero & banner section start -->
     <section class="max-w-screen-2xl m-auto min-h-[760px]">
       <!-- hero section start -->
@@ -63,17 +62,13 @@
                 the app. The integrated testing features allow for a streamlined
                 .
               </p>
-              <button
-                href=""
-                class="btn text-xl border-none bg-[rgb(29,209,0)]"
-              >
-                Get Started
+              <button class="btn text-xl border-none bg-[rgb(29,209,0)]">
+              <a href="#seat-planing">Buy Tickets</a>
               </button>
             </div>
           </div>
         </div>
         <!-- hero section end -->
-
         <!-- banner section start  -->
         <div class="flex justify-center">
           <!-- banner-1  -->
@@ -115,7 +110,6 @@
       </div>
     </section>
     <!-- hero & banner section end -->
-
     <!-- coupon section start -->
     <section class="max-w-screen-2xl m-auto mt-44">
       <h2 class="text-5xl font-bold font-raleway text-center mb-11">
@@ -150,7 +144,7 @@
           </div>
           <div class="flex justify-center items-center">
             <img class="max-h-60" src="./images/cupon-devider.png" alt="" />
-            <div>
+            <div class="text-center">
               <h3 class="text-3xl font-bold">Couple 20</h3>
               <p class="opacity-70">Coupon Code</p>
             </div>
@@ -191,7 +185,7 @@
               </div>
               <div class="flex items-center space-x-4 bg-[#1dd10026] p-3 rounded-xl">
                   <img src="./images/seat-green.png" alt="">
-                  <p class="text-[#1cd100] text-xl font-semibold"><span>40</span> Seats left</p>
+                  <p class="text-[#1cd100] text-xl font-semibold"><span id="total-seat">40</span> Seats left</p>
               </div>
             </div>
             <div class="divide-y-2 divide-dashed space-y-8 p-8 bg-[#f7f8f8] rounded-xl">
@@ -220,7 +214,7 @@
                   <img src="./images/fare.png" alt="">
                 </div>
                 <div class="text-center">
-                  <h3 class="text-2xl">550 Taka</h3>
+                  <h3 class="text-2xl"><span id="ticket-price">550</span> Taka</h3>
                   <p class="text-xl text-opacity-70">Per Seat</p>
                 </div>
               </div>
@@ -230,13 +224,13 @@
         <!-- bus information set number amount section end -->
     </section>
     <!-- seat planing section and cost section -->
-    <section class="max-w-screen-2xl m-auto mt-28 border-rose-600 border-2">
+    <section id="seat-planing" class="max-w-screen-2xl m-auto mt-28 bg-[#ffffffea] rounded-xl mb-28">
       <div class="full-ticket-section flex p-7">
-        <div class="border-2 border-rose-500 flex-initial w-1/2"><!--left section-->
+        <div class="flex-initial w-1/2"><!--left section-->
           <div class="">
             <h2 class="text-2xl font-semibold mb-3">Select Your Seat</h2>
             <hr>
-            <div class="flex items-center justify-between mb-3 mt-3">
+            <div class="flex items-center justify-between mb-3 mt-3 px-9">
               <div class="flex items-center space-x-2">
                 <img src="./images/seat-gray.png" alt="">
                 <p class="text-xl">Available</p>
@@ -248,11 +242,11 @@
             </div>
           </div>
           <hr>
-          <div class="flex items-center justify-end mb-5 mt-3">
+          <div class="flex items-center justify-end mb-5 mt-3 px-9">
             <img src="./images/Vector.png" alt="" class="bg-[#eaebec] px-9 p-3 rounded-2xl">
           </div>
           <!--seat planing-->
-          <div class="space-y-5 flex flex-col justify-start">
+          <div class="space-y-5 flex flex-col justify-start px-9">
             <div class="flex items-center justify-between">
               <div class="flex justify-center items-center gap-5">
                 <p class="w-3">A</p>
@@ -385,55 +379,58 @@
             </div>
           </div>
         </div>
+        <div class="divider lg:divider-horizontal"></div>
         <!--right section costing total amount and discount section-->
         <div class="w-1/2 px-6">
           <h2 class="text-2xl font-semibold mb-3">Select Your Seat</h2>
           <hr>
           <div class="bg-[#f7f8f8] p-7 rounded-xl mt-3">
             <div class="grid grid-cols-3 mt-3 text-center text-xl font-semibold bg-[#f7f8f8] rounded-xl">
-              <p>Seat <sup></sup></p>
+              <p>Seat <sup class="bg-[#1cd100] text-white px-3 rounded-2xl"><span id="selected-seat-number">0</span></sup></p>
               <p>Class</p>
               <p>Price</p>
             </div>
             <!-- selected set -->
-            <div class="opacity-90 mt-3 mb-3 text-xl grid grid-cols-3 font-semibold px-7 text-center"></div>
+            <div id="selected-seat-container" class="opacity-90 mt-3 mb-3 text-xl grid grid-cols-3 font-semibold px-7 text-center"></div>
             <hr>
             <div class="flex justify-between px-24 mt-3">
               <p class="text-xl font-semibold">Total Price</p>
-              <p class="text-xl font-semibold">BDT <span>0</span></p>
+              <p class="text-xl font-semibold">BDT <span id="total-price">0</span></p>
             </div>
             <div class="mt-4 justify-center flex">
                 <div class="input-wrap relative inline-block bg-white rounded-2xl p-2">
                   <input type="text" placeholder="Have any coupon?" class="w-96 p-2 rounded-2xl text-xl">
-                  <button class="bg-[#1cd100] px-7 py-2 rounded-xl">Apply</button>
+                  <button id="coupon-button" class="btn text-xl bg-[#1cd100] px-7 py-2 rounded-xl text-white">Apply</button>
                 </div>
             </div>
             <div class="flex justify-between px-24 mt-3">
               <p class="text-xl font-semibold">Grand Total</p>
-              <p class="text-xl font-semibold">BDT <span>0</span></p>
+              <p class="text-xl font-semibold">BDT <span id="grand-total">0</span></p>
             </div>
           </div>
           <!-- passenger information -->
           <div class="p-3">
-            <label class="form-control w-full mt-6">
-              <div class="label">
-                <span class="label-text font-bold text-xl">Passenger Name*</span>
-              </div>
-              <input type="text" placeholder="Enter your name" class="input input-bordered w-full text-xl" />
-            </label>
-            <label class="form-control w-full mt-6">
-              <div class="label">
-                <span class="label-text font-bold text-xl">Phone Number*</span>
-              </div>
-              <input type="text" placeholder="Enter your phone number" class="input input-bordered w-full text-xl" />
-            </label>
-            <label class="form-control w-full mt-6">
-              <div class="label">
-                <span class="label-text font-bold text-xl">Email ID</span>
-              </div>
-              <input type="text" placeholder="Enter your email id" class="input input-bordered w-full text-xl" />
-            </label>
-            <button class="bg-[#1dd100] rounded-2xl w-full text-2xl mt-6 p-4 text-white">Next</button>
+            <form action="">
+              <label class="form-control w-full mt-6">
+                <div class="label">
+                  <span class="label-text font-bold text-xl">Passenger Name*</span>
+                </div>
+                <input type="text" placeholder="Enter your name" class="input input-bordered w-full text-xl" required/>
+              </label>
+              <label class="form-control w-full mt-6">
+                <div class="label">
+                  <span class="label-text font-bold text-xl">Phone Number*</span>
+                </div>
+                <input type="number" placeholder="Enter your phone number" class="input input-bordered w-full text-xl" required />
+              </label>
+              <label class="form-control w-full mt-6">
+                <div class="label">
+                  <span class="label-text font-bold text-xl">Email ID</span>
+                </div>
+                <input type="text" placeholder="Enter your email id" class="input input-bordered w-full text-xl" />
+              </label>
+              <button type="submit" class="hover:bg-slate-300 bg-[#1dd100] rounded-2xl w-full text-2xl mt-6 py-4 text-white">Next</button>
+            </form>
             <div class="mt-8 flex justify-around items-center">
               <a class="opacity-65" href=""><p class="underline underline-offset-4">Terms and Conditions</p></a>
               <a class="opacity-65" href=""><p class="underline underline-offset-4">Cancellation Policy</p></a>
@@ -442,5 +439,37 @@
         </div>
       </div>
     </section>
+    <footer class="bg-black text-white">
+      <div class="max-w-screen-2xl m-auto">
+        <div class="flex items-center justify-between pt-32">
+          <div class="w-80">
+            <h2 class="font-bold text-3xl pb-3">P-Ticket</h2>
+            <p class="opacity-75">P-Ticket is a digital platform to make your daily commuting better.</p>
+          </div>
+          <div>
+            <p class="pb-3">Download our app</p>
+            <div class="flex items-center gap-1">
+              <img src="./images/playstore.png" alt="">
+              <div>
+                <p class="text-[8px]">GET IT ON</p>
+                <p>Google Play</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="divider h-[1px] bg-[#eaebec] mt-8 mb-8"></div>
+        <div class="flex justify-start items-center pb-32">
+          <div class="w-1/2">
+            <p class="opacity-75 text-[15px]">@all rights reserved, P-Ticket services limited.2024</p>
+          </div>
+          <div class="grid grid-cols-3 justify-items-center w-1/2 opacity-75">
+            <div><a href="">Terms & condition</a></div>
+            <div><a href="">Return & refund policy</a></div>
+            <div><a href="">Privacy policy</a></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="index.js"></script>
   </body>
 </html>
