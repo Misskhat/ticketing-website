@@ -24,12 +24,36 @@ for (const seat of seats) {
     selectedSeatContainer.appendChild(p1);
     selectedSeatContainer.appendChild(p2);
     selectedSeatContainer.appendChild(p3);
-    updateTotalCost("total-price");
+    updateTotalCost('total-price');
+    updateGrandTotal()
   });
 }
 
 function updateTotalCost(id) {
   const totalPrice = idConvertToNumber(id);
-  const newPrice = totalPrice + seatPrice;
-  document.getElementById(id).innerText = newPrice;
+  const perSetPrice = seatPrice;
+  const sum = totalPrice + perSetPrice;
+  document.getElementById(id).innerText = sum;
 }
+
+function updateGrandTotal(status){
+  const totalPrice = idConvertToNumber('total-price');
+  if (status == undefined) {
+    document.getElementById('grand-total').innerText = totalPrice;
+  } 
+  else {
+    const couponCode = document.getElementById('coupon-info').value;
+    
+    if (couponCode == 'New15') {
+      const discount = totalPrice*0.15;
+      document.getElementById('grand-total').innerText = totalPrice - discount;
+    }
+
+    if (couponCode == 'Couple 20') {
+      const discount = totalPrice*0.20;
+      document.getElementById('grand-total').innerText = totalPrice - discount;
+    }
+      
+    }
+}
+  
